@@ -1,0 +1,4 @@
+services:
+#    innova_wiktionary.example:
+#        class: Innova\WiktionaryBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

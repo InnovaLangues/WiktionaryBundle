@@ -1,0 +1,20 @@
+{
+    "name": "innovalangues/wiktionary-bundle",
+    "description" : "wiktionary bundle",
+    "type" : "symfony3-bundle",
+    "authors" : [{
+			"name" : "Arnaud Bey",
+			"email" : "arnaud.bey@u-grenoble3.fr"
+		}
+	],
+    "keywords": ["Innovalangues", "Wiktionary"],
+    "homepage": "http://github.com/InnovaLangues/WiktionaryBundle",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.1"
+    },
+    "autoload": {
+        "psr-0": { "Innova\\WiktionaryBundle": "" }
+    },
+    "target-dir": "Innova/WiktionaryBundle"
+}
