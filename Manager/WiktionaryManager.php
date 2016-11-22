@@ -4,9 +4,9 @@ namespace Innova\WiktionaryBundle\Manager;
 
 class WiktionaryManager
 {
-    public function getDefinitions($lemma, $language)
+    public function getDefinitions($form, $language)
     {
-        $wiktionaryOutput = $this->requestWiktionary($lemma, $language);
+        $wiktionaryOutput = $this->requestWiktionary($form, $language);
 
         if ($wiktionaryOutput) {
             if (preg_match('/<span[\s\S]+?id="fr"[\s\S]*?(<ol>[\s\S]*?<\/ol>)/', $wiktionaryOutput, $matches)) {
@@ -17,9 +17,9 @@ class WiktionaryManager
         return;
     }
 
-    public function getRandomDefinition($lemma, $language)
+    public function getRandomDefinition($form, $language)
     {
-        $definitions = $this->getDefinitions($lemma, $language);
+        $definitions = $this->getDefinitions($form, $language);
 
         if ($definitions) {
             $definitions = $this->removeExamples($definitions);
@@ -49,9 +49,9 @@ class WiktionaryManager
         return $definitions;
     }
 
-    private function requestWiktionary($lemma, $language)
+    private function requestWiktionary($form, $language)
     {
-        $url = 'https://'.$language.'.wiktionary.org/wiki/'.$lemma;
+        $url = 'https://'.$language.'.wiktionary.org/wiki/'.$form;
         $handle = @fopen($url, 'r');
         $wiktionaryOutput = null;
 
