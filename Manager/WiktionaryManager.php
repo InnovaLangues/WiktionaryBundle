@@ -26,7 +26,7 @@ class WiktionaryManager
             if (preg_match_all('/<li>(.*?)<\/li>/s', $definitions, $matches)) {
                 $definitions = $matches[1];
                 $key = array_rand($definitions);
-                $definition = $definitions[$key];
+                $definition = strip_tags($definitions[$key]);
 
                 return $definition;
             }
