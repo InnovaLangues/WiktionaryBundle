@@ -4,7 +4,6 @@ services:
 
     twig.extension.wiktionary:
         class: Innova\WiktionaryBundle\Twig\WiktionaryExtension
-        arguments:
-            "wiktionaryManager": "@innovalangues_wiktionary"
+        arguments: ["@innovalangues_wiktionary"]
         tags:
             - { name: twig.extension }
