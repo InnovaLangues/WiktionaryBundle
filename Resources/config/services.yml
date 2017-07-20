@@ -1,6 +1,7 @@
 services:
     innovalangues_wiktionary:
         class: Innova\WiktionaryBundle\Manager\WiktionaryManager
+        arguments: ["@translator"]
 
     twig.extension.wiktionary:
         class: Innova\WiktionaryBundle\Twig\WiktionaryExtension

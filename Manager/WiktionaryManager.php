@@ -4,6 +4,13 @@ namespace Innova\WiktionaryBundle\Manager;
 
 class WiktionaryManager
 {
+    protected $translator;
+
+    public function __construct($translator)
+    {
+        $this->translator = $translator;
+    }
+
     protected $patterns = [
         'fr' => [
             'definitions' => '/<span[\s\S]+?id="fr"[\s\S]*?(<ol>[\s\S]*?<\/ol>)/',
@@ -30,7 +37,7 @@ class WiktionaryManager
             }
         }
 
-        return;
+        return $this->translator->trans("nowiktionarydef", ['%word%'=>$form, '%language%'=>$language]);
     }
 
     public function getRandomDefinition($form, $language)
